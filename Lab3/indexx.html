@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Socket.IO chat</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+ <style>
+ body {
+ background: #fcfcfc;
+ }
+ </style>
+</head>
+<body>
+
+
+<div class="row">
+  <div class="col-6">
+    <h2>messge form<h2>
+	<form id="mesForm">
+	<label for="name">Name</label>
+	<input type="text" name="name" id="name" class="form-control">
+	<br>
+	<label for="name">Message</label>
+	<textarea name="message" id="message" class="form-control" placeholder="input message"></textarea>
+	<br>
+	<input type="submit" value="Send" class="btn btn-danger">
+	</form>
+	</div>
+<div class="col-6">
+   <h3>messages<h3>
+   <div id="mess"></div>
+  </div>
+  </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+$(function(){
+    var socket=io.connect();
+	var $form=$("#mesForm");
+	var $input=$("#message");
+	var $printMes=$("#mess");
+	var $name=$("#name");
+	
+	
+	$form.submit(function(event){ 
+	   event.preventDefault();
+	   socket.emit('send', {mess: $input.val(), name: $name.val()});
+	   $input.val('');
+	});
+	 socket.on('add mess', function(data){
+		$printMes.append("<div><b>" + data.name + "</b>: " + data.mess + "</div>");
+	});
+});
+</script>
+</body>
+</html>
