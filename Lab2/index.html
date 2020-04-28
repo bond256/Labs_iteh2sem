@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+ </head>
+ <body>
+ <h1>Get ward</h1>
+ <div id="table"></div>
+ <select id="select1">
+ <option>no data</option>
+ </select>
+ <br/>
+ <input type="button" name="submit1" value="get" onclick="get1();"/>
+ 
+
+ <table id="table1" border="1px"> 
+ </table>
+ <br/>
+ 
+ <h1>Get nurse</h1>
+ <select id="select2">
+ <option>no data</option>
+ </select>
+ <br/>
+ <input type="button" name="submit2" value="get" onclick="get2();"/>
+ <br/>
+ <table id="table2" border="1px"> 
+ </table>
+ 
+ <h1>get duty</h1>
+ <select id="select3">
+ <option>no data</option>
+ </select>
+ <br/>
+ <input type="button" name="submit3" value="get" onclick="get3();"/>
+ <table id="table3" border="1px"> 
+ </table>
+ <br/>
+ 
+ 
+ <h1>insert nurse</h1>
+id: </br>
+<input id="id" name="id" type="text" size="30">
+</br>
+
+name: </br>
+<input id="name" name="name" type="text" size="30">
+</br>
+
+date: </br>
+<input id="date" name="date" type="date">
+</br>
+
+department:</br>
+<select id="depart_select"> 
+ <option value=""</option></select>
+    <br/>
+	
+shift <br/>
+  <select id="duty_select"> <option value=""></option></select>
+	<br/>
+<input type="button" name="submit4" value="Insert" onclick="insert_nurse();"/>
+
+
+
+<h1>insert ward</h1>
+id: </br>
+<input id="id_ward" name="id" type="text" size="30">
+</br>
+
+name: </br>
+<input id="ward_name" name="name" type="text" size="30">
+</br>
+
+<input type="submit" name="submit5" value="Insert" onclick="insert_ward();"/>
+
+
+
+<h1>appointing a nurse to the ward</h1>
+name: </br>
+<select id="name_select"> 
+    <option value=""></option></select>
+    <br/>
+
+name ward: </br>
+<select id="ward_select"> 
+    <option value=""></option></select>
+    <br/>
+
+<input type="submit" name="submit6" value="Set" onclick="set();"/>
+
+ <script src="Client.js"></script>
+ </body>
+
+</html>
